@@ -1,0 +1,8 @@
+import funcion
+
+numero = int(input("Ingrese un número: "))
+
+if funcion.es_par(numero):
+    print("El número es par.")
+else:
+    print("El número es impar.")
