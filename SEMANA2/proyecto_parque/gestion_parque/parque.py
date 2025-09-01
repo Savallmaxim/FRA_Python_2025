@@ -73,6 +73,6 @@ def registrar_visita():
 def mostrar_resumen(resumen):
     print("\n--- RESUMEN ---")
     print(f"Visitante: {resumen['nombre']} ({resumen['edad']} años)")
-    print("Atracciones elegidas:", resumen["atracciones_elegidas"])
-    print("Atracciones permitidas:", resumen["atracciones_permitidas"])
+    print("Atracciones elegidas:", resumen['atracciones_elegidas'])
+    print("Atracciones permitidas:", resumen['atracciones_permitidas'])
     print(f"Costo total a pagar: ${resumen['costo_total']}")
