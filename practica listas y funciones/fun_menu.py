@@ -70,6 +70,8 @@ def actualizar_ejemplares(titulos, ejemplares, cant_libros):
     for i in range(cant_libros):
         if titulos[i] == libro:
             cambio = int(input("ingrese cantidad a modificar (positiva=devolución, negativa=préstamo): "))
+            #maxi -> 2 copias. si pongo una cantidad positiva (2) se agregan a los ejemplares (maxi -> 4 copias)
+            #si pongo una cantidad negativa (-1) se restan los ejemplares (maxi -> 1 copia)
             ejemplares[i] = ejemplares[i] + cambio
             if ejemplares[i] < 0:
                 ejemplares[i] = 0
