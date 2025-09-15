@@ -76,7 +76,7 @@ while opcion != 7:
         encontrado = False
         for i in range(cant_libros):
             if titulos[i] == libro:
-                cambio = int(input("ingrese cantidad a modificar (positivo = devolución o negativo = prestamo): "))
+                cambio = int(input("ingrese cantidad a modificar (cantidad positiva = devolución - cantidad negativa = prestamo): "))
                 ejemplares[i] = ejemplares[i] + cambio
                 if ejemplares[i] < 0:
                     ejemplares[i] = 0
@@ -85,6 +85,6 @@ while opcion != 7:
         if encontrado == False:
             print("ese titulo no esta en el catalogo")
     elif opcion == 7:
-        print("saliendo del programa")
+        print("programa terminado")
     else:
-        print("opcion invalida. Intente de nuevo")
+        print("opcion invalida, intente de nuevo")
