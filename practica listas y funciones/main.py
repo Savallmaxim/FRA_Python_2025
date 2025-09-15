@@ -77,6 +77,7 @@ while opcion != 7:
         for i in range(cant_libros):
             if titulos[i] == libro:
                 cambio = int(input("ingrese cantidad a modificar (cantidad positiva = devolución - cantidad negativa = prestamo): "))
+                #si pongo 2 se devulven 2 y se suman a los ejemplares, y si pongo -1 se le restan a los ejemplares y se muestran los que quedan
                 ejemplares[i] = ejemplares[i] + cambio
                 if ejemplares[i] < 0:
                     ejemplares[i] = 0
