@@ -20,3 +20,7 @@ def creditos(datos):
     print(f"Carrera: {datos['carrera']}")
     print(f"Contacto: {datos['contacto'][0]} - {datos['contacto'][1]}\n")
     print('#' * 50)
+
+
+
+
