@@ -11,7 +11,7 @@ config__ = {
     }
 } 
 
-json_archive = 'set_up.json'
+json_archive = 'datos/set_up.json'
 
 def guardar_datos(archivo, config):
     with open(archivo, 'w') as datos:
@@ -19,7 +19,7 @@ def guardar_datos(archivo, config):
 
 def cargar_datos():
     if os.path.exists(json_archive) or os.path.getsize(json_archive) == 0:
-        guardar_datos(config__)
+        guardar_datos(json_archive, config__)
         return config__
     
     with open(json_archive, 'r') as datos:
