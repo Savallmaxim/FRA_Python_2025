@@ -1,6 +1,6 @@
 from creditos.func_creditos import creditos, datos
 from juego.logica import ronda
-from estadisticas.archivo_json_csv import leer_archivo_csv, archivo
+from estadisticas.archivo_json_csv import ordenar_10_mejores, archivo
 
 
 def mini_generala():
@@ -19,8 +19,7 @@ def mini_generala():
         if opcion == '1':
             ronda()
         elif opcion == '2':
-            estadisticas = leer_archivo_csv(archivo)
-            print(estadisticas)
+            ordenar_10_mejores(archivo)
         elif opcion == '3':
             creditos(datos)
         elif opcion == '4':
