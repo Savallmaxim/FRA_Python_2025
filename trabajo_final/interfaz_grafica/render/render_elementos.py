@@ -15,12 +15,19 @@ ruta_fondo = os.path.join(BASE_DIR, "assets", "pokemonfondo.jpg")
 FONDO = pygame.image.load(ruta_fondo)
 FONDO = pygame.transform.scale(FONDO, (WIDTH, HEIGHT))
 
+# --- fondo creditos ---
+ruta_fondo = os.path.join(BASE_DIR, "assets", "Pueblo_Paleta.jpg")
+FONDO_CREDITOS = pygame.image.load(ruta_fondo)
+FONDO_CREDITOS = pygame.transform.scale(FONDO_CREDITOS, (WIDTH, HEIGHT))
 # Devuelven las superficies
 def logo_juego():
     return LOGO
 
 def fondo_menu():
     return FONDO
+
+def fondo_creditos():
+    return FONDO_CREDITOS
 
 # --- BOTÓN RECTÁNGULO ---
 def crear_boton_rect(superficie, x, y, ancho, alto, texto, color_fondo, color_texto):
