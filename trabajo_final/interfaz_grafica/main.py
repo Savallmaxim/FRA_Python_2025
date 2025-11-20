@@ -13,6 +13,7 @@ reloj = pygame.time.Clock()
 FPS = 60
 pantalla_actual = "menu"
 musica_actual = None
+bandera_musica_menu = False
 
 
 botones = None

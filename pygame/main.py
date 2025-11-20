@@ -21,9 +21,9 @@ btn_play_img = pygame.transform.scale(pygame.image.load("play.png", (120, 80)))
 btn_opciones_img = pygame.transform.scale(pygame.image.load("opciones.png", (120, 80)))
 btn_salir_img = pygame.transform.scale(pygame.image.load("salir.png", (120, 80)))
 #posicionar botones para detectar clicks
-btn_play_rect = btn_play_img.get_rect(topleft=(800 /2 - btn_play_img.get_width() /2, 80))
-btn_opciones_rect = btn_opciones_img.get_rect(topleft=(800 /2 - btn_opciones_img.get_width() /2, 80))
-btn_salir_rect = btn_salir_img.get_rect(topleft=(800 /2 - btn_salir_img.get_width() /2, 80))
+btn_play_rect = btn_play_img.get_rect(topleft=(ANCHO /2 - btn_play_img.get_width() /2, 80))
+btn_opciones_rect = btn_opciones_img.get_rect(topleft=(ANCHO /2 - btn_opciones_img.get_width() /2, 80))
+btn_salir_rect = btn_salir_img.get_rect(topleft=(ANCHO /2 - btn_salir_img.get_width() /2, 80))
 #creamos la ventana principal
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
 

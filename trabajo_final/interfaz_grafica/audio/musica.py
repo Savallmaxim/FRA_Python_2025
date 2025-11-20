@@ -1,18 +1,21 @@
 import pygame
+import os
+
 VOLUMEN = 0.03
 
-MUSICA_PRINCIPAL = "assets/musica_pokemon.mp3"
-EFECTO_CLICK = "assets/pokemon_boton.wav"
+# Obtiene la ruta absoluta del directorio raíz del proyecto
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Crea las rutas absolutas correctas
+MUSICA_PRINCIPAL = os.path.join(BASE_DIR, "assets", "musica_pokemon.mp3")
+EFECTO_CLICK = os.path.join(BASE_DIR, "assets", "pokemon_boton.wav")
 
 VOLUMEN_MUSICA = VOLUMEN
 
 def reproducir_musica(ruta, loop=True):
     pygame.mixer.music.load(ruta)
-    if loop:
-        cantidad_reproducciones = -1
-    else:
-        cantidad_reproducciones = 0
-    pygame.mixer.music.play(cantidad_reproducciones)
+    pygame.mixer.music.set_volume(VOLUMEN_MUSICA)
+    pygame.mixer.music.play(-1 if loop else 0)
 
 def detener_musica():
     pygame.mixer.music.stop()
