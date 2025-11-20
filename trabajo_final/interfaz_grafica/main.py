@@ -33,7 +33,7 @@ while ejecutando:
             reproducir_musica(MUSICA_PRINCIPAL)
             musica_actual = "menu"
         botones = pantalla_principal(pantalla)
-
+        
     elif pantalla_actual == "jugar":
         botones = pantalla_jugar(pantalla)
     elif pantalla_actual == "opciones":
