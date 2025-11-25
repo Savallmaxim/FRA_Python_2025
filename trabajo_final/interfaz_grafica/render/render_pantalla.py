@@ -3,11 +3,7 @@ from datos.constantes import WIDTH, COLOR_TEXTO_OSCURO, COLOR_SECUNDARIO, COLOR_
 from .render_elementos import logo_juego, fondo_menu, crear_boton_rect, fondo_creditos
 from estadisticas.archivo_json_csv import leer_archivo_csv, archivo
 
-boton_jugar = 'assets/boton_play.png'
-boton_creditos = 'assets/boton_creditos.png'
-boton_stats = 'assets/boton_stats.png'
-boton_salir = 'assets/boton_salir.png'
-
+COLOR_VERDE = (15, 112, 1)
 def pantalla_principal(pantalla):
     logo = logo_juego()
     fondo = fondo_menu()
@@ -19,9 +15,9 @@ def pantalla_principal(pantalla):
     etiquetas = ["Jugar", "Opciones", "Créditos", "Estadísticas", "Salir"]
     claves = ["jugar", "opciones", "creditos", "estadisticas", "salir"]
 
-    ANCHO_BOTON = 160
+    ANCHO_BOTON = 185
     ALTO_BOTON = 60
-    ESPACIO = 20
+    ESPACIO = 40
 
     total_ancho_botones = (ANCHO_BOTON * 5) + (ESPACIO * 4)
     inicio_botones_x = (WIDTH - total_ancho_botones) // 2
@@ -41,8 +37,8 @@ def pantalla_principal(pantalla):
             ANCHO_BOTON,
             ALTO_BOTON,
             texto,
-            COLOR_TEXTO_OSCURO,
-            COLOR_SECUNDARIO
+            COLOR_VERDE,
+            COLOR_TEXTO_CLARO
         )
 
         botones[claves[i]] = rect   # ← SE GUARDA COMO DICCIONARIO
@@ -74,32 +70,32 @@ def pantalla_creditos(pantalla):
     pantalla.blit(fondo2, (0, 0))
     tam_datos = 45
     fuente = pygame.font.Font(None, 65)
-    texto = fuente.render("CREDITOS", True, (COLOR_TEXTO_CLARO)) 
-    pantalla.blit(texto, (330, 80))
+    texto = fuente.render("CREDITOS", True, (0, 0, 0)) 
+    pantalla.blit(texto, (500, 80))
 
     fuente_autores = pygame.font.Font(None, tam_datos)
     txt_autores = fuente_autores.render('Autores: Manuel Courtade, Maximo Savall', True, (0, 0, 0))
-    pantalla.blit(txt_autores, (120, 160))
+    pantalla.blit(txt_autores, (120, 190))
 
     fuente_fecha = pygame.font.Font(None, tam_datos)
     txt_fecha = fuente_fecha.render('Fecha: 31/10/2025', True, (0, 0, 0))
-    pantalla.blit(txt_fecha, (120, 235))
+    pantalla.blit(txt_fecha, (120, 265))
 
     fuente_materia = pygame.font.Font(None, tam_datos)
     txt_materia = fuente_materia.render('Materia: Programacion I', True, (0, 0, 0))
-    pantalla.blit(txt_materia, (120, 310))
+    pantalla.blit(txt_materia, (120, 340))
 
     fuente_docentes = pygame.font.Font(None, tam_datos)
     txt_docentes = fuente_docentes.render('Docentes: Martin Alejandro Garcia - Veronica Carbonari', True, (0, 0, 0))
-    pantalla.blit(txt_docentes, (120, 385))
+    pantalla.blit(txt_docentes, (120, 415))
 
     fuente_carrera = pygame.font.Font(None, tam_datos)
     txt_carrera = fuente_carrera.render('Carrera: Tecnicatura en programacion', True, (0, 0, 0))
-    pantalla.blit(txt_carrera, (120, 460))
+    pantalla.blit(txt_carrera, (120, 490))
 
     fuente_contacto = pygame.font.Font(None, tam_datos)
     txt_contacto = fuente_contacto.render('Contacto: courtademanuel@outlook.es - savallmaximo@gmail.com', True, (0, 0, 0))
-    pantalla.blit(txt_contacto, (120, 535))
+    pantalla.blit(txt_contacto, (120, 565))
 
     volver_menu(pantalla)
 

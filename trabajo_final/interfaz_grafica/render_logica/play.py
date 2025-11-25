@@ -3,7 +3,7 @@ import random
 from render.render_pantalla import fondo_creditos, volver_menu
 from puntaje.plantilla_puntaje import jugada_generala, jugada_uno_al_seis, jugada_full, jugada_poker, jugada_escalera
 from estadisticas.archivo_json_csv import realizar_registro, archivo
-from render.render_elementos import crear_boton_rect
+from render.render_elementos import crear_boton_rect, fondo_play
 from datos.constantes import WIDTH,HEIGHT
 
 imagen_dado_1 = pygame.image.load("assets/pikachu.png")
@@ -82,7 +82,7 @@ def solicitar_nombre(pantalla, puntaje_total):
                 else:
                     if len(nombre) < 18:
                         nombre += evento.unicode
-
+        pygame.display.update()
         clock.tick(60)
 
     return nombre  
@@ -200,7 +200,7 @@ def puntaje_total(puntajes):
 
 def pantalla_jugar(pantalla):
 
-    fondo = fondo_creditos()
+    fondo = fondo_play()
 
     cant_categorias = 10
     turno_actual = 1
@@ -291,8 +291,8 @@ def pantalla_jugar(pantalla):
         # Botón tirar
         rect_boton_tirar = boton_tirar_dados(pantalla)
 
-        pantalla.blit(fuente.render(f"Categorías restantes: {cant_categorias}", True, (0, 0, 0)), (20, 70))
-        pantalla.blit(fuente.render(f"Tiro: {turno_actual} de {turnos_totales}", True, (0, 0, 0)), (20, 120))
+        pantalla.blit(fuente.render(f"Categorías restantes: {cant_categorias}", True, (106, 252, 236)), (20, 70))
+        pantalla.blit(fuente.render(f"Tiro: {turno_actual} de {turnos_totales}", True, (106, 252, 236)), (20, 120))
 
         # Mostrar dados
         for i, valor in enumerate(dados):

@@ -16,9 +16,14 @@ FONDO = pygame.image.load(ruta_fondo)
 FONDO = pygame.transform.scale(FONDO, (WIDTH, HEIGHT))
 
 # --- fondo creditos ---
-ruta_fondo = os.path.join(BASE_DIR, "assets", "Pueblo_Paleta.jpg")
+ruta_fondo = os.path.join(BASE_DIR, "assets", "fondocre.jpg")
 FONDO_CREDITOS = pygame.image.load(ruta_fondo)
 FONDO_CREDITOS = pygame.transform.scale(FONDO_CREDITOS, (WIDTH, HEIGHT))
+
+# --- fondo play ---
+ruta_fondo = os.path.join(BASE_DIR, "assets", "fondojugar.jpg")
+FONDO_PLAY = pygame.image.load(ruta_fondo)
+FONDO_PLAY = pygame.transform.scale(FONDO_PLAY, (WIDTH, HEIGHT))
 # Devuelven las superficies
 def logo_juego():
     return LOGO
@@ -29,12 +34,16 @@ def fondo_menu():
 def fondo_creditos():
     return FONDO_CREDITOS
 
+def fondo_play():
+    return FONDO_PLAY
+
 # --- BOTÓN RECTÁNGULO ---
 def crear_boton_rect(superficie, x, y, ancho, alto, texto, color_fondo, color_texto):
     fuente = pygame.font.Font(None, 40)
     rectangulo = pygame.Rect(x, y, ancho, alto)
 
     pygame.draw.rect(superficie, color_fondo, rectangulo, border_radius=10)
+    pygame.draw.rect(superficie, (255, 255, 255), rectangulo, width=2, border_radius=10)
 
     texto_img = fuente.render(texto, True, color_texto)
     texto_x = x + (ancho - texto_img.get_width()) // 2
