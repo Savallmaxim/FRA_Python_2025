@@ -1,8 +1,9 @@
 import pygame 
 import datos.constantes as con
-from render.render_pantalla import pantalla_principal, pantalla_opciones, pantalla_creditos, pantalla_jugar, pantalla_estadisticas
+from render.render_pantalla import pantalla_principal, pantalla_opciones, pantalla_creditos, pantalla_estadisticas
 from audio.musica import reproducir_musica, MUSICA_PRINCIPAL
 from eventos.nuestros_eventos import gestionar_eventos
+from render_logica.play import pantalla_jugar
 
 
 pygame.init()
@@ -35,7 +36,7 @@ while ejecutando:
         botones = pantalla_principal(pantalla)
         
     elif pantalla_actual == "jugar":
-        botones = pantalla_jugar(pantalla)
+        pantalla_actual = pantalla_jugar(pantalla)
     elif pantalla_actual == "opciones":
         botones = pantalla_opciones(pantalla)
     elif pantalla_actual == "creditos":

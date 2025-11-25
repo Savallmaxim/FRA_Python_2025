@@ -1,7 +1,6 @@
 import pygame
 from audio.musica import cargar_efecto, reproducir_efecto, EFECTO_CLICK
 
-
 efecto = cargar_efecto(EFECTO_CLICK)
 
 def gestionar_eventos(evento, pantalla_actual, botones):
@@ -25,23 +24,7 @@ def gestionar_eventos(evento, pantalla_actual, botones):
                     reproducir_efecto(efecto)
                     return "salir"
 
-    # ✔ NUEVO: si estás en créditos y presionás ESC → volver al menú
-    if pantalla_actual == "creditos":
-        if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-            return "menu"
-
-    # Podés agregar lo mismo en otras pantallas si querés que ESC vuelva al menú
-    if pantalla_actual == "opciones":
-        if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-            return "menu"
-    
-    if pantalla_actual == "jugar":
-        if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-            return "menu"
-        
-    if pantalla_actual == "estadisticas":
-        if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-            return "menu"
-
+    if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
+        return "menu"
 
     return pantalla_actual

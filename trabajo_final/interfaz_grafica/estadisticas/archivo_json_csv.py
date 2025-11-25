@@ -78,6 +78,8 @@ def json_tematicas(nombre_archivo):
     
     print(f"Archivo '{nombre_archivo}' creado con éxito ")
 
+json_tematicas(archivo_json)
+
 def json_background(nombre_archivo):
     if not os.path.exists(nombre_archivo):
         return [] 
@@ -87,7 +89,6 @@ def json_background(nombre_archivo):
     
     return lista_personajes
 
-#json_tematicas(archivo_json)
 
 def mostrar_archivo_json():
     pokemones_categoria = json_background(archivo_json)
